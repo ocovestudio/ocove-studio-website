@@ -86,7 +86,7 @@ main {
   z-index: 1;
 }
 
-main section {
+.section {
   z-index: 3;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -97,35 +97,34 @@ main section {
   pointer-events: none;
   padding: 20px;
   top: 50vh;
+  max-width: 800px;
   transform: translateY(calc(-50%));
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
-main section div {
+.section div {
   padding: 20px;
   border-right: solid var(--font-col) 1px;
-  max-width: 20vw;
 }
-
-main section div:last-child {
+.section div:last-child {
   border-right: none;
 }
 
 @media screen and (max-width: 768px) {
-  main section {
+  .section {
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: none;
     top: 0%;
     transform: translate(0%);
   }
 
-  main section div {
+  .section div {
     max-width: none;
     border-right: none;
     border-bottom: solid var(--font-col) 1px;
   }
   
-  main section div:last-child {
+  .section div:last-child {
     border-bottom: none;
   }
 }

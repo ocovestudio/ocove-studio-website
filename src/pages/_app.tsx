@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import { AnimatePresence } from 'framer-motion'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useState } from 'react'
@@ -17,12 +18,10 @@ export default function App({ Component, pageProps }: AppProps) {
           type="font/ttf"
         />
       </Head>
-      <div className='three-canvas-container'>
-        <Scene />
-      </div>
-      <main>
+      <Scene />
+      <AnimatePresence mode='wait' >
         <Component {...pageProps} />
-      </main>
+      </AnimatePresence>
       <Navbar />
     </>    
   )
