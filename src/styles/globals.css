@@ -68,11 +68,16 @@ main {
   z-index: 2;
   display: flex;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
   min-height: 100svh;
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
+}
+
+.align-center {
+  align-items: center;
 }
 
 .three-canvas-container {
@@ -94,9 +99,7 @@ section {
   border-radius: 10px;
   pointer-events: none;
   padding: 20px;
-  top: 50vh;
   max-width: 800px;
-  transform: translateY(calc(-50%));
   background-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -114,6 +117,10 @@ section {
 }
 
 @media screen and (max-width: 768px) {
+  main {
+    align-items: flex-start;
+  }
+
   .section-horizontal {
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: none;
