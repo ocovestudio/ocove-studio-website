@@ -13,10 +13,14 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: space-between;
+  top: 0;
+  left: 0;
+  /* align-items: space-between; */
   box-sizing: border-box;
-  inset: 2em;
+  padding: 1.5em;
   pointer-events: none;
+  height: 100%;
+  width: 100%;
   z-index: 99;
 }
 
@@ -64,6 +68,7 @@ main {
   z-index: 2;
   display: flex;
   justify-content: center;
+  min-height: 100vh;
   min-height: 100svh;
   width: 100%;
   padding: 20px;
