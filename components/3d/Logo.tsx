@@ -13,8 +13,8 @@ export const Logo = (props: any) => {
         if (ref?.current) {
             ref.current.rotation.x+=-(mouse.y/100);
             ref.current.rotation.y+=(mouse.x/100);
-            ref.current.position.z=(mouse.y/1);
-            ref.current.position.x=-(mouse.x/1);
+            ref.current.position.z=(mouse.y/10);
+            ref.current.position.x=-(mouse.x/10);
         }
     });
     
