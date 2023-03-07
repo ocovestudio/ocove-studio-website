@@ -1,5 +1,6 @@
 :root {
   --font-col: black;
+  --nav-padding: 1.5em
 }
 
 @font-face {
@@ -17,7 +18,7 @@ nav {
   left: 0;
   /* align-items: space-between; */
   box-sizing: border-box;
-  padding: 1.5em;
+  padding: var(--nav-padding);
   pointer-events: none;
   height: 100%;
   width: 100%;
@@ -109,7 +110,7 @@ section {
 }
 
 .section-horizontal div {
-  padding: 20px;
+  padding: 10px;
   border-right: solid var(--font-col) 1px;
 }
 .section-horizontal div:last-child {
@@ -119,12 +120,13 @@ section {
 @media screen and (max-width: 768px) {
   main {
     align-items: flex-start;
+    position: relative;
+    top: calc(var(--nav-padding)*2);
   }
 
   .section-horizontal {
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: none;
-    top: 0%;
     transform: translate(0%);
   }
 
