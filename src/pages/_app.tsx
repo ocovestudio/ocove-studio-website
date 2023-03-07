@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { useState } from 'react'
 import Scene from '../../components/3d/Scene'
 import Navbar from '../../components/Navbar/Nav'
 
