@@ -6,13 +6,13 @@ import { BlendFunction } from 'postprocessing'
 
 export default function Scene() {
   return (
-    <Canvas style={{height: '100svh', zIndex: -1}}>
-      <Logo />
-      <directionalLight position={[3.3, 1.0, 4.4]} />
-      <Environment preset="forest" />
-      <EffectComposer>
-        <Bloom luminanceThreshold={0} luminanceSmoothing={0.5} height={400} blendFunction={BlendFunction.MULTIPLY} />
-      </EffectComposer>
-    </Canvas>
+      <Canvas style={{height: 'inherit'}}>
+        <Logo />
+        <directionalLight position={[3.3, 1.0, 4.4]} />
+        <Environment preset="forest" />
+        <EffectComposer>
+          <Bloom luminanceThreshold={0} luminanceSmoothing={0.5} height={400} blendFunction={BlendFunction.MULTIPLY} />
+        </EffectComposer>
+      </Canvas>
   )
 }

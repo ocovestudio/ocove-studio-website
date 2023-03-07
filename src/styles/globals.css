@@ -64,21 +64,18 @@ main {
   z-index: 2;
   display: flex;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
 }
 
-canvas {
-  height: inherit;
-}
-
 .three-canvas-container {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   width: 100%;
+  height: 100%;
   left: 0;
   top: 0;
   z-index: 1;
