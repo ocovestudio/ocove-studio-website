@@ -64,7 +64,7 @@ main {
   z-index: 2;
   display: flex;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 100svh;
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
