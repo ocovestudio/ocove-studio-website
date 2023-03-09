@@ -2,12 +2,15 @@ import '@/styles/globals.css'
 import { MouseInfoProvider } from '@faceless-ui/mouse-info'
 import { AnimatePresence } from 'framer-motion'
 import type { AppProps } from 'next/app'
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import { useState } from 'react'
-import Scene from '../../components/3d/Scene'
+import { useRef, useState } from 'react'
 import Navbar from '../../components/Navbar/Nav'
 
+const Scene = dynamic(() => import('../../components/3d/Scene'), { ssr: true })
+
 export default function App({ Component, pageProps }: AppProps) {
+  const ref = useRef()
   return (
     <>
       <Head>
@@ -20,10 +23,16 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <MouseInfoProvider>
-        <Scene />
         <AnimatePresence mode='wait' >
           <Component {...pageProps} />
         </AnimatePresence>
+        {/* @ts-ignore */}
+        {Component?.canvas && (
+            <Scene className='pointer-events-none' eventSource={ref} eventPrefix='client'>
+              {/* @ts-ignore */}
+              {Component.canvas(pageProps)}
+            </Scene>
+        )}
         <Navbar />
       </MouseInfoProvider>
     </>    

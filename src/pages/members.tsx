@@ -1,9 +1,8 @@
 import { FunctionComponent } from "react";
 import { motion } from "framer-motion";
-interface IMembersProps {
-}
-
-const Members: FunctionComponent<IMembersProps> = (props) => {
+import dynamic from "next/dynamic";
+import { Logo } from "../../components/3d/Logo";
+export default function Page() {
   return (
     <motion.main
       key="modal"
@@ -29,4 +28,7 @@ const Members: FunctionComponent<IMembersProps> = (props) => {
   );
 };
 
-export default Members;
+// Add component to add new objects per route without rerendering, eg:
+// Page.canvas = () => <Logo />
+
+Page.canvas = () => <></>

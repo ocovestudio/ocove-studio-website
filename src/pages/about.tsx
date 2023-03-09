@@ -1,10 +1,9 @@
 import { FunctionComponent } from "react";
 import { motion } from "framer-motion";
+import { Logo } from "../../components/3d/Logo";
 
-interface IAboutProps {
-}
 
-const About: FunctionComponent<IAboutProps> = (props) => {
+export default function Page() {
   return (
     <motion.main
       key="modal"
@@ -22,4 +21,7 @@ const About: FunctionComponent<IAboutProps> = (props) => {
   );
 };
 
-export default About;
+// Add component to add new objects per route without rerendering, eg:
+// Page.canvas = () => <Logo />
+
+Page.canvas = () => <></>

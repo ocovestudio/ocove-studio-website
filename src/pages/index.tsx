@@ -1,8 +1,8 @@
 import Head from "next/head";
-import Scene from "../../components/3d/Scene";
 import { motion } from "framer-motion";
-
-export default function Home() {
+import dynamic from "next/dynamic";
+import { Logo } from "../../components/3d/Logo";
+export default function Page() {
   return (
     <>
       <Head>
@@ -17,3 +17,8 @@ export default function Home() {
     </>
   )
 }
+
+// Add component to add new objects per route without rerendering, eg:
+// Page.canvas = () => <Logo />
+
+Page.canvas = () => <></>

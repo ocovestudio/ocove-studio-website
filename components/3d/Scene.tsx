@@ -6,7 +6,9 @@ import { BlendFunction } from 'postprocessing'
 import { browserName, browserVersion, BrowserView, isBrowser, osName, osVersion } from 'react-device-detect'
 import { useEffect, useState } from 'react'
 
-export default function Scene() {
+
+
+export default function Scene({children}: any) {
   const [isCompatible, setIsCompatible] = useState(false)
 
   // add effect composer bloom if device is compatible
@@ -28,6 +30,7 @@ export default function Scene() {
     <div className='three-canvas-container'>
       <Canvas style={{height: 'inherit'}}>
         <fog attach="fog" color="rgb(210, 210, 210)" near={4.5} far={8.5} />
+        {children}
         <Logo />
         <directionalLight position={[3.3, 1.0, 4.4]} />
         <Environment files="/HDR_040_Field_Env_edit.hdr" />
