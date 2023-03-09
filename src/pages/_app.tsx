@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import { MouseInfoProvider } from '@faceless-ui/mouse-info'
 import { AnimatePresence } from 'framer-motion'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
@@ -18,11 +19,13 @@ export default function App({ Component, pageProps }: AppProps) {
           type="font/ttf"
         />
       </Head>
-      <Scene />
-      <AnimatePresence mode='wait' >
-        <Component {...pageProps} />
-      </AnimatePresence>
-      <Navbar />
+      <MouseInfoProvider>
+        <Scene />
+        <AnimatePresence mode='wait' >
+          <Component {...pageProps} />
+        </AnimatePresence>
+        <Navbar />
+      </MouseInfoProvider>
     </>    
   )
 }
