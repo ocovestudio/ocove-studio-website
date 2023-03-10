@@ -16,7 +16,7 @@ const Navbar = (props: Props) => {
       </ul>
       <ul>
         {slugs?.map((slug: any, i: number) => (
-            <li><Link href={`/${slug.slug.current}`}><p>{pageTitles[i].title}</p></Link></li>
+            <li key={slug + 'navbar-link'}><Link href={`/${slug.slug.current}`}><p>{pageTitles[i].title}</p></Link></li>
         ))}
       </ul>
     </nav>

@@ -2,7 +2,7 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 import { GetStaticProps } from "next";
 import { createClient } from "next-sanity";
-import Navbar from "../../components/Navbar/Nav";
+import Navbar from "../../components/Navbar/Navbar";
 import CustomHead from "../../components/head/CustomHead";
 
 const client = createClient({

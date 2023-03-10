@@ -2,7 +2,7 @@ import { createClient } from "next-sanity";
 import { motion } from "framer-motion";
 import { PortableText } from "@portabletext/react";
 import { GetStaticProps } from "next";
-import Navbar from "../../components/Navbar/Nav";
+import Navbar from "../../components/Navbar/Navbar";
 import CustomHead from "../../components/head/CustomHead";
 import Image from "next/image";
 
