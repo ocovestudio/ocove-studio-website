@@ -1,21 +1,26 @@
 import Link from "next/link";
-import { FunctionComponentFactory } from "react";
 
-interface INavProps {}
+interface Props {
+  slugs: object[];
+  pageTitles: any;
+}
 
-const Nav: FunctionComponentFactory<INavProps> = (props) => {
+const Navbar = (props: Props) => {
+  const { slugs, pageTitles } = props;
+
   return (
     <nav>
       <ul>
-        <li><Link href="/">Ocove Studio</Link></li>
-        <li><Link href="/about">About</Link></li>
+        <li><Link href="/"><h1>Ocove Studio</h1></Link></li>
+        <li><Link href="mailto:contact@ocove.studio"><p>Contact</p></Link></li>
       </ul>
       <ul>
-        <li><Link href="/members">Members</Link></li>
-        <li><Link href="/members">Members</Link></li>
+        {slugs?.map((slug: any, i: number) => (
+            <li><Link href={`/${slug.slug.current}`}><p>{pageTitles[i].title}</p></Link></li>
+        ))}
       </ul>
     </nav>
   );
 };
 
-export default Nav;
+export default Navbar;

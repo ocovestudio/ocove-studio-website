@@ -1,6 +1,7 @@
 :root {
   --font-col: black;
-  --nav-padding: 1.5em
+  --nav-padding: 1.5em;
+  --font-weight: 300;
 }
 
 @font-face {
@@ -11,13 +12,14 @@
 
 * {
   box-sizing: border-box;
+  font-weight: var(--font-weight);
 }
 
 nav {
   position: fixed;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  flex-direction: column;
   top: 0;
   left: 0;
   box-sizing: border-box;
@@ -25,7 +27,7 @@ nav {
   pointer-events: none;
   height: 100%;
   width: 100%;
-  z-index: 99;
+  z-index: 3;
 }
 
 nav ul {
@@ -41,6 +43,10 @@ nav ul li {
   pointer-events:all;
 }
 
+nav ul li:nth-child(even) {
+
+}
+
 nav ul li a {
   text-decoration: none;
   color: var(--font-col);
@@ -52,6 +58,12 @@ nav ul li a:hover {
 
 nav ul li a:active {
   font-style: italic;
+}
+
+nav ul li a p, nav ul li a h1 {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -98,15 +110,17 @@ main {
 }
 
 section {
-  z-index: 3;
   position: relative;
   height: fit-content;
   backdrop-filter: blur(10px);
   border-radius: 10px;
-  pointer-events: none;
   padding: 20px;
   max-width: 800px;
   background-color: rgba(255, 255, 255, 0.4);
+}
+
+section a {
+  z-index: 1000;
 }
 
 .section-horizontal {
@@ -115,17 +129,23 @@ section {
 }
 
 .section-horizontal div {
-  padding: 10px;
+  padding: 0 10px;
   border-right: solid var(--font-col) 1px;
 }
 .section-horizontal div:last-child {
   border-right: none;
 }
 
+h1 {
+  font-size: 16px;
+  margin: 0px;
+}
+
 @media screen and (max-width: 768px) {
   main {
     align-items: flex-start;
     position: relative;
+    top: calc(var(--nav-padding) * 2);
   }
 
   .section-horizontal {
